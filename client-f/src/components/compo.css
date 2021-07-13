@@ -1,0 +1,629 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* Navbar  */
+
+.topnav {
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around;
+  height: 120px;
+}
+
+header {
+  background-color: rgb(255, 255, 255);
+}
+
+.h1Nav {
+  text-align: center;
+  color: rgb(40, 69, 150);
+  letter-spacing: 3px;
+  font-family: Cursive, Lucida Handwriting;
+}
+.h1Nav h1 {
+  font-size: 25px;
+}
+
+.btnn {
+  font-size: 12px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  color: rgb(2, 18, 44);
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px 30px;
+  cursor: pointer;
+}
+.btnn:hover {
+  background-color: rgb(2, 18, 44);
+  color: rgb(255, 255, 255);
+}
+
+/*  home  */
+
+/* .home {
+  text-align: center;
+ margin-left: 250px;
+ position: relative;
+ left: 35px;
+} */
+
+.home {
+  margin: auto;
+  width: 1200px;
+  background-color: rgba(146, 161, 173, 0.116);
+}
+
+.frml {
+  display: flex;
+}
+
+#inpt {
+  width: 25%;
+}
+
+.inputLieu {
+  width: 80%;
+}
+
+.reservation {
+  background-image: url("../IMG/automed.png");
+  background-repeat: no-repeat;
+  background-size: 1730px 650px;
+  border-radius: 3px;
+}
+
+.back01 {
+  padding-bottom: 238px;
+  padding-top: 80px;
+  padding-left: 180px;
+  padding-right: 180px;
+  margin: auto;
+}
+.back1 {
+ padding: 66px;
+  background-color: rgba(240, 248, 255, 0.472);
+  border-radius: 10px;
+  margin: auto;
+}
+
+.homeF {
+  position: relative;
+  left: -150px;
+  top: 500px;
+  margin-bottom: 500px;
+}
+
+.cons {
+  width: 100vw;
+  max-width: 1000px;
+  margin: 5rem auto;
+  display: grid;
+  gap: 2rem;
+  padding-top: 50px;
+}
+@media screen and (min-width: 768px) {
+  .cons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cons1 {
+  width: 100vw;
+  max-width: 1000px;
+  margin: 5rem auto;
+  display: grid;
+  gap: 2rem;
+  padding-top: 50px;
+}
+@media screen and (min-width: 768px) {
+  .cons1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.cons1b {
+  border-style: solid;
+  border-color: rgba(214, 206, 206, 0.239);
+  border-radius: 5px;
+  padding: 40px;
+}
+.qust {
+  width: 100vw;
+  max-width: 1000px;
+  margin: 5rem auto;
+  display: grid;
+  gap: 2rem;
+  padding-top: 50px;
+}
+@media screen and (min-width: 768px) {
+  .qust {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.footter {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(2, 18, 44);
+  color: white;
+  text-align: center;
+}
+.disp {
+  display: flex;
+}
+
+/* Login + Signup */
+
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800");
+
+* {
+  box-sizing: border-box;
+  padding: 5px;
+}
+form {
+  background: #fbfbfb !important;
+
+  font-weight: 400;
+  font-family: "Fira Sans", sans-serif;
+  padding: 40px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+span {
+  font-family: "Fira Sans", sans-serif;
+}
+
+.navbar-light {
+  background-color: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+}
+
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  margin: 30px;
+}
+
+.auth-inner {
+  width: 650px;
+  margin: auto;
+  background: #ffffff;
+  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+  padding: 50px 55px 45px 55px;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+.auth-wrapper .form-control:focus {
+  border-color: #167bff;
+  box-shadow: none;
+}
+
+.auth-wrapper h3 {
+  text-align: center;
+  margin: 0;
+  line-height: 1;
+  padding-bottom: 20px;
+}
+
+.custom-control-label {
+  font-weight: 500;
+}
+
+.forgot-password,
+.forgot-password a {
+  text-align: right;
+  font-size: 13px;
+  color: #7f7d7d;
+  margin: 0;
+}
+
+.forgot-password a {
+  color: #167bff;
+}
+
+.btn2 {
+  position: relative;
+  left: 300px;
+}
+#root,
+body,
+html {
+  margin: -8px;
+}
+
+/* Profil */
+
+.profil {
+  width: 1600px;
+  margin: auto;
+}
+.logout {
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(2, 18, 44);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 50px;
+}
+
+.link_wrapper {
+  position: relative;
+}
+.dct {
+  display: block;
+  width: 150px;
+  height: 55px;
+  font-weight: bold;
+  text-decoration: none;
+  background: rgb(2, 18, 44);
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid rgb(2, 18, 44);
+  transition: all 0.35s;
+  font-family: "Lato", sans-serif;
+  border-radius: 4px;
+}
+
+.dct:hover {
+  width: 200px;
+  border: 3px solid rgb(255, 255, 255);
+  background: transparent;
+  color: rgb(255, 255, 255);
+}
+
+.ajouter {
+  display: block;
+  border-radius: 4px;
+  width: 250px;
+  height: 65px;
+  line-height: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  background: rgb(2, 18, 44);
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid rgb(2, 18, 44);
+  transition: all 0.35s;
+  font-family: "Lato", sans-serif;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all 0.35s;
+}
+
+.icon svg {
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: rgb(2, 18, 44);
+  transition: all 0.35s;
+}
+
+.ajouter:hover {
+  width: 200px;
+  border: 3px solid rgb(2, 18, 44);
+  background: transparent;
+  color: rgb(2, 18, 44);
+}
+
+.ajouter:hover + .icon {
+  border: 3px solid rgb(255, 255, 255);
+  right: -25%;
+}
+
+.dispc {
+  display: flex;
+  justify-content: space-around;
+}
+.dispb {
+  display: flex;
+}
+
+.card {
+  margin-left: 150px;
+}
+
+.alert {
+  display: flex;
+}
+
+.vl {
+  border-right: 4px solid rgb(2, 18, 44);
+  height: auto;
+  margin-left: 30px;
+  top: 0;
+}
+
+.-vl {
+  height: auto;
+  width: 380px;
+}
+
+/*     Cars   List   */
+
+.Content {
+  width: 1050px;
+  border-radius: 7px;
+  margin-left: 70px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.664);
+}
+
+
+/* HEADER RESERVATION */
+
+.Contenth {
+  width: 900px;
+  border-radius: 7px;
+  margin-left: 70px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.664);
+  margin-top: 20px;
+}
+.Contentc {
+  width: 1100px;
+  text-align: center;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.664);
+  margin: auto;
+}
+.Contentb {
+  width: 1200px;
+  text-align: center;
+  box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.664);
+  margin: auto;
+}
+.Carcard {
+  width: 100vw;
+  max-width: 1000px;
+  margin: 5rem auto;
+  display: grid;
+  gap: 2rem;
+  padding-top: 50px;
+}
+@media screen and (min-width: 768px) {
+  .Carcard {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.car {
+  border-radius: 1rem;
+  padding-left: 50px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  background-color: rgb(255, 255, 255);
+}
+.car:hover {
+  font-size: 18px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.664);
+  border-radius: 30px;
+}
+
+.flexaround {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Edit Model  */
+
+.ajouterM:hover {
+  width: 100px;
+  border: 3px solid rgb(2, 18, 44);
+  background: transparent;
+  color: rgb(2, 18, 44);
+}
+
+.ajouterM:hover + .icon {
+  border: 3px solid rgb(255, 255, 255);
+  right: 10%;
+}
+
+.ajouterM {
+  display: block;
+  border-radius: 4px;
+  width: 120px;
+  height: 45px;
+  line-height: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  background: rgb(2, 18, 44);
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid rgb(2, 18, 44);
+  transition: all 0.35s;
+  font-family: "Lato", sans-serif;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all 0.35s;
+}
+
+.icon svg {
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: rgb(2, 18, 44);
+  transition: all 0.35s;
+}
+
+#rangeBox {
+  /* carry complete  range box*/
+  width: 300px;
+  height: 10px;
+  padding-bottom: 50px;
+}
+#sliderBox {
+  position: relative;
+  top: 0%;
+  width: 300px; /*2x width*/
+}
+#slider0to50 {
+  width: 150px; /*1x width*/
+  position: absolute;
+  left: 0%;
+}
+#slider51to100 {
+  width: 150px; /*1x width*/
+  position: absolute;
+  left: 50%;
+}
+#inputRange {
+  position: relative;
+  top: 50%;
+}
+#inputRange::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+#inputRange #min {
+  width: 40%;
+  float: left;
+}
+#inputRange #max {
+  width: 40%;
+  float: right;
+}
+
+
+
+#titleRes {
+  color: #ffffff;
+  padding: 10px;
+  position: relative;
+  right: 42%;
+}
+
+.hReservation { 
+  display: flex;
+}
+.dispb { 
+  display: flex;
+  justify-content: space-between;
+}
+.pd1 { 
+padding-right: 40px;
+}
+.pd { 
+  padding-left: 40px;
+  }
+
+  .confirmation { 
+    text-align: left;
+    padding-left: 30px;
+  }
+
+  .anuuler {
+    width: 750px;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.664);
+    text-align: left;
+    padding-top: 15px;
+    background-color: rgb(233, 255, 239);;
+  }
+
+  .disl { 
+    display:  flex;
+  }
+
+  .checkoutinfo {
+    width: 750px;
+    text-align: left;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.664);
+    margin: auto;
+  }
+
+
+  .tarif {
+    width: auto;
+    height: 600px;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.664);
+    padding: 30px;
+    text-align: left;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    margin-top: 52px;
+  }
+  
+  .maReservation {
+    margin: auto;
+    padding: 80px;
+    text-align: left;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.664);
+    
+  }
+
+  
+.btnR:hover {
+  width: 280px;
+  border: 3px solid rgb(2, 18, 44);
+  background: transparent;
+  color: rgb(2, 18, 44);
+}
+
+.btnR {
+  display: block;
+  border-radius: 4px;
+  width: 320px;
+  height: 45px;
+  line-height: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  background: rgb(2, 18, 44);
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid rgb(2, 18, 44);
+  transition: all 0.35s;
+  font-family: "Lato", sans-serif;
+margin: 10px;
+margin-top: 30px;
+}
+
+.margin30 {
+  margin-top: 30px;
+}
+
+.back2 {
+  padding: 20px;
+   border-radius: 10px;
+   margin: auto;
+ }
