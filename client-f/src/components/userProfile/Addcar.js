@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { MDBInput, MDBInputGroup } from "mdbreact";
-import { useDispatch } from "react-redux";
-import { addCar } from "../../js/action/carAction";
-
+import { singleFileUpload } from "../data/api";
 
 import "../compo.css";
 
-function Addcar() {
+function Addcar(props) {
   const [marque, setMarque] = useState("");
   const [kilometrage, setKilometrage] = useState("");
   const [couleur, setCouleur] = useState("");
@@ -21,30 +19,41 @@ function Addcar() {
   const [name, setName] = useState();
   const [file, setFile] = useState();
 
-  const dispatch = useDispatch();
+  const [singleFile, setSingleFile] = useState("");
+  const [singleProgress, setSingleProgress] = useState(0);
+
+  const SingleFileChange = (e) => {
+    setSingleFile(e.target.files[0]);
+    setSingleProgress(0);
+  };
+  const singleFileOptions = {
+    onUploadProgress: (progressEvent) => {
+      const { loaded, total } = progressEvent;
+      const percentage = Math.floor(((loaded / 1000) * 100) / (total / 1000));
+      setSingleProgress(percentage);
+    },
+  };
+  const uploadSingleFile = async () => {
+    const formData = new FormData();
+    formData.append("file", singleFile);
+    formData.append("marque", marque);
+    formData.append("kilometrage", kilometrage);
+    formData.append("couleur", couleur);
+    formData.append("nombreDePlace", nombreDePlace);
+    formData.append("dateMiseDeCirulation", dateMiseDeCirulation);
+    formData.append("matricule", matricule);
+    formData.append("prix", prix);
+    formData.append("transmission", transmission);
+    formData.append("categorie", categorie);
+    formData.append("carburant", carburant);
+    formData.append("dateCreation", Date.now());
+    await singleFileUpload(formData, singleFileOptions);
+    props.getsingle();
+  };
+
   function refreshPage() {
     window.location.reload(false);
   }
-
-  const add = (e) => {
-    e.preventDefault();
-    dispatch(
-      addCar({
-        marque,
-        kilometrage,
-        couleur,
-        nombreDePlace,
-        dateMiseDeCirulation,
-        matricule,
-        prix,
-        transmission,
-        categorie,
-        carburant,
-        img,
-      })
-    );
-  };
-
 
   return (
     <div className="Content">
@@ -53,7 +62,11 @@ function Addcar() {
         <form enctype="multipart/form-data" action="api/form.php" method="post">
           <div className="flex">
             <label htmlFor="file">File</label>
-            <input type="file" id="file"  onChange={(e) => setImg(e.target.value)}/>
+            <input
+              type="file"
+              id="file"
+              onChange={(e) => SingleFileChange(e)}
+            />
           </div>
         </form>
       </div>
@@ -150,7 +163,7 @@ function Addcar() {
       />
 
       <div className="flexaround">
-        <a className="ajouter" href="#" onClick={add}>
+        <a className="ajouter" href="#" onClick={uploadSingleFile}>
           Ajouter X
         </a>
         <a className="ajouter" href="#" onClick={refreshPage}>

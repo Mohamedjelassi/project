@@ -1,20 +1,31 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getCars } from "../../js/action/carAction";
+import React, { useState, useEffect } from "react";
+import { getSingleFiles } from "../data/api";
 
 import Cardcard from "./carCard";
-
 
 import "../compo.css";
 
 const CarList = () => {
-  const dispatch = useDispatch();
+  const [singleFiles, setSingleFiles] = useState([]);
+
+  const getSingleFileslist = async () => {
+    try {
+      const fileslist = await getSingleFiles();
+      setSingleFiles(fileslist);
+    } catch (error) {
+      console.log(error);
+      
+    }
+  };
 
   useEffect(() => {
-    dispatch(getCars());
+    getSingleFileslist();
   }, []);
 
-  const cars = useSelector((state) => state.carReducer.cars);
+
+  
+
+ 
 
   // carData.loading ? (
   //   <div class="d-flex justify-content-center">
@@ -28,10 +39,12 @@ const CarList = () => {
 
   return (
     <div className="Content">
-      <div className="Carcard">
-        {cars.map((el, i) => (
-          <Cardcard key={i} car={el} />
-        ))}
+      <div className="container">
+        <div className="Carcard">
+          {singleFiles.map((el, i) => (
+            <Cardcard key={i} car={el} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { MDBInput, MDBInputGroup } from "mdbreact";
-import { useDispatch } from "react-redux";
 
 import "../compo.css";
-import { editCar } from "../../js/action/carAction";
+import { editCar } from "../data/api";
 
 function EditModal({ car }) {
   const [show, setShow] = useState(false);
@@ -25,26 +24,25 @@ function EditModal({ car }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const dispatch = useDispatch();
-
   const edit = () => {
-    dispatch(
-      editCar(car._id, {
-        marque,
-        kilometrage,
-        couleur,
-        nombreDePlace,
-        dateMiseDeCirulation,
-        matricule,
-        prix,
-        transmission,
-        categorie,
-        carburant,
-      })
-    );
+    editCar(car._id, {
+      marque,
+      kilometrage,
+      couleur,
+      nombreDePlace,
+      dateMiseDeCirulation,
+      matricule,
+      prix,
+      transmission,
+      categorie,
+      carburant,
+    });
     handleClose();
+    refreshPage();
   };
-
+  function refreshPage() {
+    window.location.reload(false);
+  }
   return (
     <div>
       <button className="btnR" onClick={handleShow}>

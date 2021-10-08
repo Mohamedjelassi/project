@@ -1,48 +1,89 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { deleteCar } from "../../js/action/carAction";
-import EditModal from './editCars'
-
-
+import { deleteCar } from "../data/api";
+import EditModal from "./editCars";
 
 import "../compo.css";
 
+const Cardcard = ({ car }) => {
 
-const Cardcard = ({car}) => {
+  
+  const delett = () => {
+    deleteCar(car._id);
+    refreshPage();
+  };
 
-  const dispatch = useDispatch();
-
-  const delet = () => {
-dispatch(deleteCar(car._id))
- }
-
-
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
   return (
     <div>
       <article className="car">
-       
-          <img className="photo" width='300px' height="300px" src={car.img} alt="img" />
-          {console.log(car.img)}
-          <h1>{car.marque}</h1>
-          <h4 style={{ color: "#617d98" }}> couleur : {car.couleur} </h4>
-      
-        <h4 style={{ color: "#617d98" }}>Nombre De Place : {car.nombreDePlace}</h4>
-        <h4 style={{ color: "#617d98" }}> kilometrage : {car.kilometrage}</h4>
-        <h4 style={{ color: "#617d98" }}>date Mise De Cirulation : {car.dateMiseDeCirulation}</h4>
-        <h4 style={{ color: "#617d98" }}>matricule : {car.matricule}</h4>
-        <h4 style={{ color: "#617d98" }}> carburant : {car.carburant}</h4>
-        <h4 style={{ color: "#617d98" }}> prix : {car.prix}</h4>
-        <h4 style={{ color: "#617d98" }}> Nombre de sieges : {car.nbsieges}</h4>
-        <h4 style={{ color: "#617d98" }}>Transmission : {car.transmission}</h4>
-        <h4 style={{ color: "#617d98" }}>Categorie :{car.categorie}</h4>
+        <div className="disp">
+          <div className="carimg">
+            <img
+              src={`http://localhost:5000/${car.filePath}`}
+              height="230"
+              width="300"
+              style={{ borderRadius: "8px" }}
+              alt="img"
+            />
+          </div>
+          <div>
+            <h2>{car.marque}</h2>
+            <div className="disp">
+              <div>
+                <h6>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    fill="currentColor"
+                    class="bi bi-person"
+                    viewBox="0 0 16 16"
+                  >
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                  </svg>
+                  Nombre De Place : {car.nombreDePlace}
+                </h6>
+                <h6>
+                  {" "}
+                  <img
+                    width="40"
+                    height="40"
+                    src="https://img.icons8.com/dotty/80/000000/gas-station.png"
+                  />{" "}
+                  carburant : {car.carburant}
+                </h6>
+
+                <h6>
+                  <img
+                    width="40"
+                    height="40"
+                    src="https://img.icons8.com/pastel-glyph/50/000000/gearbox-selector.png"
+                  />
+                  Transmission : -{car.transmission}
+                </h6>
+                <h6> Couleur : -{car.couleur} </h6>
+              </div>
+              <div>
+                <h6>Categorie : {car.categorie}</h6>
+                <h6> Couleur : {car.couleur} </h6>
+                <h6> Prix par jour : {car.prix}</h6>
+                <h6> Kilometrage : {car.kilometrage} KM </h6>
+                <h6> Date mise cirulation : {car.dateMiseDeCirulation}</h6>
+                <h6> Matricule : {car.matricule}</h6>
+                <h6> Date de la creation de l'article : {car.createdAt}</h6>
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="flexaround">
-        <button className="btnR" onClick={delet} >
-        Supprimer   voiture
-        </button>
-      
-       <EditModal car={car} />
-        
+          <button className="btnR" onClick={delett}>
+            Supprimer voiture
+          </button>
+
+          <EditModal car={car} />
         </div>
       </article>
     </div>

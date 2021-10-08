@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import logo from "../../IMG/hirentcarLOGO.jpg";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import "../compo.css";
 
+import {getSingleFiles} from '../data/api';
 import { logout } from "../../js/action/authAction";
 import CarList from "./carList";
 import Addcar from "./Addcar";
@@ -27,6 +28,23 @@ function UserProfil() {
 
   const [showCarList, setShowCarList] = React.useState(true);
   const [showAddCar, setShowAddCar] = React.useState(false);
+
+  const [singleFiles, setSingleFiles] = useState([]);
+
+
+  const getSingleFileslist = async () => {
+    try {
+        const fileslist = await getSingleFiles();
+        setSingleFiles(fileslist);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  
+  useEffect(() => {
+    getSingleFileslist();
+ 
+  }, []);
  
   const onClick = () => {
     setShowCarList(true);
@@ -112,7 +130,7 @@ function UserProfil() {
           </div>
           <div className="pros">
             {showCarList ? <CarList /> : null}
-            {showAddCar ? <Addcar /> : null}
+            {showAddCar ? <Addcar  getsingle={() => getSingleFileslist()} /> : null}
           </div>
         </div>
       </div>

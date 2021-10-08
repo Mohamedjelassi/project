@@ -23,6 +23,7 @@
     "mime": "^1.6.0",
     "mongoose": "^5.12.14",
     "multer": "^1.4.2",
+    "path": "^0.12.7",
     "react-avatar": "^3.10.0",
     "react-file-base64": "^1.0.3",
     "react-multistep": "^5.1.0"

@@ -1,36 +1,31 @@
-
 import React from "react";
 import "./compo.css";
 
-
-
-
-
 function Fouter() {
   return (
-    <div  className="footter">
+    <div className="footter">
       <div className="disp">
-        <h6>Avis de confidentialité </h6>
-        <h5>Cookies </h5>
-        <h5> Nos conditions de vente</h5>
-        <h5>Foire aux questions </h5>
-        <h5> Déclaration sur l'esclavage moderne</h5>
-        <h5> Comment nous travaillons</h5>
-        <h5> Devenir partenaire – Marketplace</h5>
-        <h5> Notre programme d'affiliation</h5>
-        <h5> Carrières</h5>
+        <h7>Avis de confidentialité </h7>
+        <h7>Cookies </h7>
+        <h7> Nos conditions de vente</h7>
+        <h7>Foire aux questions </h7>
+        <h7> Déclaration sur l'esclavage moderne</h7>
+        <h7> Comment nous travaillons</h7>
+        <h7> Devenir partenaire – Marketplace</h7>
+        <h7> Notre programme d'affiliation</h7>
+        <h7> Carrières</h7>
       </div>
       <div>
-        <h2>
+        <h6>
           Rentalcars.com est une appellation commerciale de Booking.com
           Transport Limited dont le siège social est enregistré au 100 New
           Bridge Street, London, EC4V. Numéro de TVA : GB 855349007.{" "}
-        </h2>
-        <h2>
+        </h6>
+        <h6>
           {" "}
           Rentalcars.com fait partie du groupe Booking Holdings Inc., le leader
           mondial du voyage en ligne et de ses services connexes.
-        </h2>
+        </h6>
         <p>
           {" "}
           Booking.com Transport Limited (num&eacute;ro de
@@ -47,11 +42,11 @@ function Fouter() {
           9010, Malta.
         </p>
 
-        <h2>
+        <h6>
           {" "}
           Copyright © 2020 Rentalcars.com est une appellation commerciale de
           Booking.com Transport Limited. Tous droits réservés.
-        </h2>
+        </h6>
       </div>
     </div>
   );

@@ -44,7 +44,7 @@ function Home() {
           <div className="cons1b">
             <h2>Abonnez-vous pour recevoir nos offres exclusives ! </h2>
             <input placeholder="Adresse e-mail" />
-            <button className="green"> Abonnez </button>
+            <button className="greenA"> Abonnez </button>
           </div>
         </div>
         <div className="qust">

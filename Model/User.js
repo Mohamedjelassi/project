@@ -26,6 +26,9 @@ const userSchema = new Schema({
         type : Number,
        
     },
+    userCar :{
+        type:[String]
+    }
 })
 
 module.exports = User = mongoose.model('User', userSchema)

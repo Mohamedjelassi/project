@@ -1,6 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getCars } from "../../js/action/carAction";
+import { getSingleFiles } from "../data/api";
 import { Form } from "react-bootstrap";
 
 import CardcardReservation from "./carCardReservation";
@@ -27,13 +26,21 @@ const CarList = () => {
   const onClickf = () => setShowCarList(false);
   const onClickf1 = () => setShowAddCar(false);
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getCars());
-  }, []);
-
-  const cars = useSelector((state) => state.carReducer.cars);
+  
+    const [singleFiles, setSingleFiles] = useState([]);
+  
+    const getSingleFileslist = async () => {
+      try {
+        const fileslist = await getSingleFiles();
+        setSingleFiles(fileslist);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+  
+    useEffect(() => {
+      getSingleFileslist();
+    }, []);
 
   // carData.loading ? (
   //   <div class="d-flex justify-content-center">
@@ -124,7 +131,7 @@ const CarList = () => {
         {showAddCar ? <Editt /> : null}
       </div>
       <div className="Carcard">
-        {cars.map((el, i) => (
+        {singleFiles.map((el, i) => (
           <CardcardReservation key={i} car={el} />
         ))}
       </div>

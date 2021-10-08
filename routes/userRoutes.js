@@ -1,7 +1,5 @@
-const express = require("express");
 
-// Router From express
-const router = express.Router();
+const router= require("express").Router()
 
 // UserAdmin Schema
 const User = require("../Model/User");
